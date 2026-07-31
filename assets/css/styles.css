@@ -227,6 +227,25 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 .section-dark {
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-elevated) 10%, var(--bg-elevated) 90%, var(--bg) 100%);
 }
+.section-blue {
+  background: var(--accent);
+  color: #ffffff;
+}
+.section-blue .section-title,
+.section-blue .section-desc {
+  color: #ffffff;
+}
+.section-blue .section-desc a {
+  color: #e0f2fe; /* Light blue for links on dark blue background */
+}
+.section-blue p,
+.section-blue ul,
+.section-blue li {
+  color: rgba(255, 255, 255, 0.9);
+}
+.section-blue .btn-ghost {
+  color: #ffffff;
+}
 .section-head { margin-bottom: 52px; }
 .section-title {
   font-size: clamp(1.9rem, 3.8vw, 2.9rem);

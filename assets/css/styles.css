@@ -8,15 +8,15 @@
   --text-primary: #1e293b;
   --text-secondary: #475569;
   --text-muted: #64748b;
-  --accent: #0284c7;
-  --accent-hover: #0369a1;
-  --accent-soft: rgba(2, 132, 199, 0.1);
-  --accent-glow: rgba(2, 132, 199, 0.2);
+  --accent: #0ea5e9;
+  --accent-hover: #0284c7;
+  --accent-soft: rgba(14, 165, 233, 0.1);
+  --accent-glow: rgba(14, 165, 233, 0.2);
   --error: #ef4444;
-  --cta-bg: #0284c7;
-  --cta-bg-solid: #0284c7;
+  --cta-bg: #0ea5e9;
+  --cta-bg-solid: #0ea5e9;
   --cta-text: #ffffff;
-  --cta-hover: #0369a1;
+  --cta-hover: #0284c7;
   --font-display: 'Barlow Condensed', sans-serif;
   --font-body: 'Barlow', system-ui, -apple-system, sans-serif;
   --font-serif: 'Playfair Display', serif;
@@ -403,27 +403,42 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   width: 100%;
 }
 .adv-img-half {
-  min-height: 350px;
-  background: #e2e8f0;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px 24px;
 }
-.adv-placeholder {
+.adv-row:nth-child(odd) .adv-img-half {
+  background: var(--bg);
+}
+.adv-row:nth-child(even) .adv-img-half {
+  background: var(--accent);
+}
+.adv-img-half img, .adv-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-display);
   font-size: 3rem;
   color: #94a3b8;
   font-weight: 700;
   letter-spacing: 0.1em;
 }
+
 .adv-text-half {
   background: var(--accent);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 24px;
+  padding: 80px 24px;
 }
 .adv-row:nth-child(even) .adv-text-half {
   background: #ffffff;
@@ -431,13 +446,13 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 }
 
 .adv-text-inner {
-  max-width: 500px;
+  max-width: 580px;
   width: 100%;
 }
 .adv-title {
   font-family: var(--font-display);
-  font-size: 38px;
-  margin-bottom: 20px;
+  font-size: 44px;
+  margin-bottom: 28px;
   font-weight: 700;
   color: #ffffff;
 }
@@ -445,9 +460,9 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   color: var(--accent);
 }
 .adv-desc {
-  font-size: 17px;
-  line-height: 1.6;
-  margin-bottom: 16px;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 24px;
   opacity: 0.9;
 }
 .adv-row:nth-child(even) .adv-text-half .adv-desc {
@@ -457,12 +472,12 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 .adv-list {
   list-style: none;
   padding-left: 0;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 .adv-list li {
-  margin-bottom: 10px;
-  font-size: 16px;
-  padding-left: 24px;
+  margin-bottom: 12px;
+  font-size: 17px;
+  padding-left: 28px;
   position: relative;
   opacity: 0.95;
 }
@@ -474,10 +489,45 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   content: "•";
   color: inherit;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
   position: absolute;
   left: 6px;
   top: -2px;
+}
+
+/* Animations */
+.adv-anim-row .adv-img-half,
+.adv-anim-row .adv-text-inner > * {
+  opacity: 0;
+}
+.adv-anim-row.is-visible .adv-img-half {
+  animation: fadeUp 0.7s ease-out forwards;
+}
+.adv-anim-row.is-visible .adv-text-inner .adv-title {
+  animation: fadeSide 0.6s ease-out 0.2s forwards;
+}
+.adv-anim-row.is-visible .adv-text-inner .adv-desc:nth-of-type(1) { animation: fadeSide 0.6s ease-out 0.3s forwards; }
+.adv-anim-row.is-visible .adv-text-inner .adv-desc:nth-of-type(2) { animation: fadeSide 0.6s ease-out 0.4s forwards; }
+.adv-anim-row.is-visible .adv-text-inner .adv-list li:nth-child(1) { animation: fadeSide 0.5s ease-out 0.50s forwards; }
+.adv-anim-row.is-visible .adv-text-inner .adv-list li:nth-child(2) { animation: fadeSide 0.5s ease-out 0.55s forwards; }
+.adv-anim-row.is-visible .adv-text-inner .adv-list li:nth-child(3) { animation: fadeSide 0.5s ease-out 0.60s forwards; }
+.adv-anim-row.is-visible .adv-text-inner .adv-list li:nth-child(4) { animation: fadeSide 0.5s ease-out 0.65s forwards; }
+
+.adv-row-reverse.adv-anim-row.is-visible .adv-text-inner > * {
+  animation-name: fadeSideLeft;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeSide {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeSideLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @media (min-width: 768px) {
@@ -490,8 +540,14 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   .adv-img-half, .adv-text-half {
     width: 50%;
   }
-  .adv-text-half {
+  .adv-img-half {
     padding: 80px 60px;
+  }
+  .adv-img-half img, .adv-placeholder {
+    min-height: 450px;
+  }
+  .adv-text-half {
+    padding: 120px 80px;
   }
 }
 

@@ -388,6 +388,113 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   margin-top: 4px;
 }
 
+/* ===== Advantages Full Width ===== */
+.advantages-full-width {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.adv-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.adv-img-half, .adv-text-half {
+  width: 100%;
+}
+.adv-img-half {
+  min-height: 350px;
+  background: #e2e8f0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.adv-placeholder {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: #94a3b8;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.adv-text-half {
+  background: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+.adv-row:nth-child(even) .adv-text-half {
+  background: #ffffff;
+  color: var(--text-primary);
+}
+
+.adv-text-inner {
+  max-width: 500px;
+  width: 100%;
+}
+.adv-title {
+  font-family: var(--font-display);
+  font-size: 38px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.adv-row:nth-child(even) .adv-text-half .adv-title {
+  color: var(--accent);
+}
+.adv-desc {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+.adv-row:nth-child(even) .adv-text-half .adv-desc {
+  color: var(--text-secondary);
+  opacity: 1;
+}
+.adv-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 16px;
+}
+.adv-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding-left: 24px;
+  position: relative;
+  opacity: 0.95;
+}
+.adv-row:nth-child(even) .adv-text-half .adv-list li {
+  color: var(--text-secondary);
+  opacity: 1;
+}
+.adv-list li::before {
+  content: "•";
+  color: inherit;
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  left: 6px;
+  top: -2px;
+}
+
+@media (min-width: 768px) {
+  .adv-row {
+    flex-direction: row;
+  }
+  .adv-row.adv-row-reverse {
+    flex-direction: row-reverse;
+  }
+  .adv-img-half, .adv-text-half {
+    width: 50%;
+  }
+  .adv-text-half {
+    padding: 80px 60px;
+  }
+}
+
 /* ===== Works Gallery ===== */
 .works-section {
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-elevated) 10%, var(--bg-elevated) 90%, var(--bg) 100%);

@@ -1,22 +1,22 @@
-/* ===== Design Tokens — Purple Theme ===== */
+/* ===== Design Tokens — Light Blue Theme (MaksiDent) ===== */
 :root {
-  --bg: #0a0a0a;
-  --bg-elevated: #121212;
-  --surface: #1a1a1a;
-  --surface-2: #242424;
-  --border: rgba(255, 255, 255, 0.15);
-  --text-primary: #ffffff;
-  --text-secondary: #cccccc;
-  --text-muted: #888888;
-  --accent: #ffffff;
-  --accent-hover: #dddddd;
-  --accent-soft: rgba(255, 255, 255, 0.1);
-  --accent-glow: rgba(255, 255, 255, 0.2);
-  --error: #e5484d;
-  --cta-bg: #ffffff;
-  --cta-bg-solid: #ffffff;
-  --cta-text: #000000;
-  --cta-hover: #e0e0e0;
+  --bg: #ffffff;
+  --bg-elevated: #f4f7fa;
+  --surface: #e8eef3;
+  --surface-2: #d1dfed;
+  --border: rgba(0, 0, 0, 0.1);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --accent: #0284c7;
+  --accent-hover: #0369a1;
+  --accent-soft: rgba(2, 132, 199, 0.1);
+  --accent-glow: rgba(2, 132, 199, 0.2);
+  --error: #ef4444;
+  --cta-bg: #0284c7;
+  --cta-bg-solid: #0284c7;
+  --cta-text: #ffffff;
+  --cta-hover: #0369a1;
   --font-display: 'Barlow Condensed', sans-serif;
   --font-body: 'Barlow', system-ui, -apple-system, sans-serif;
   --font-serif: 'Playfair Display', serif;
@@ -77,10 +77,10 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   text-transform: uppercase;
 }
 .btn:active { transform: scale(0.97); }
-.btn-cta { background: var(--cta-bg); color: var(--cta-text); box-shadow: 0 8px 24px -8px rgba(255,255,255,0.3); }
-.btn-cta:hover { background: #e0e0e0; box-shadow: 0 12px 32px -8px rgba(255,255,255,0.4); transform: translateY(-1px); }
+.btn-cta { background: var(--cta-bg); color: var(--cta-text); box-shadow: 0 8px 24px -8px rgba(2, 132, 199, 0.3); }
+.btn-cta:hover { background: var(--cta-hover); box-shadow: 0 12px 32px -8px rgba(2, 132, 199, 0.4); transform: translateY(-1px); }
 .btn-cta:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
-.btn-outline { background: transparent; color: var(--text-primary); border-color: rgba(255,255,255,0.3); }
+.btn-outline { background: transparent; color: var(--text-primary); border-color: rgba(0, 0, 0, 0.2); }
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 .btn-ghost { background: transparent; color: var(--text-secondary); text-transform: none; letter-spacing: 0; font-weight: 600; border: none; }
 .btn-ghost:hover { color: var(--accent); }
@@ -106,7 +106,7 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   border-bottom: 1px solid transparent;
 }
 .site-header.scrolled {
-  background: rgba(14, 11, 20, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 10px 0;

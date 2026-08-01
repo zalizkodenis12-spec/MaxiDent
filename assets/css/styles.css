@@ -82,6 +82,8 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 .btn-cta:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
 .btn-outline { background: transparent; color: var(--text-primary); border-color: rgba(0, 0, 0, 0.2); }
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.hero .btn-outline { color: #ffffff; border-color: rgba(255, 255, 255, 0.5); }
+.hero .btn-outline:hover { background: #ffffff; color: #000000; border-color: #ffffff; }
 .btn-ghost { background: transparent; color: var(--text-secondary); text-transform: none; letter-spacing: 0; font-weight: 600; border: none; }
 .btn-ghost:hover { color: var(--accent); }
 .btn-lg { padding: 17px 36px; font-size: 15px; }
@@ -192,6 +194,7 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   font-style: italic;
   font-size: clamp(3.2rem, 8vw, 5.6rem);
   font-weight: 700; line-height: 1.1; letter-spacing: 0.02em; margin-bottom: 20px;
+  color: #ffffff;
 }
 .hero-title em {
   font-style: italic; font-family: var(--font-serif);
@@ -200,12 +203,12 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 .hero-sub {
   font-family: 'Cinzel', serif;
   font-size: clamp(0.85rem, 1.4vw, 1rem);
-  color: var(--text-secondary); max-width: 520px; margin-bottom: 32px; line-height: 1.8;
+  color: #ffffff; max-width: 520px; margin-bottom: 32px; line-height: 1.8;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
-.hero-meta { display: flex; gap: 10px; flex-wrap: wrap; color: var(--text-muted); font-family: var(--font-body); font-size: 13px; }
+.hero-meta { display: flex; gap: 10px; flex-wrap: wrap; color: rgba(255,255,255,0.7); font-family: var(--font-body); font-size: 13px; }
 
 /* ===== Trust bar ===== */
 .trust-bar {
@@ -410,8 +413,9 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 }
 .adv-img-half img, .adv-placeholder {
   width: 100%;
+  max-width: 380px;
   height: 100%;
-  min-height: 350px;
+  aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 20px;
   box-shadow: var(--shadow-lg);
@@ -424,6 +428,7 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   color: #94a3b8;
   font-weight: 700;
   letter-spacing: 0.1em;
+  margin: 0 auto;
 }
 
 .adv-text-half {
@@ -524,10 +529,10 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
     width: 50%;
   }
   .adv-img-half {
-    padding: 80px 60px;
+    padding: 80px 40px;
   }
   .adv-img-half img, .adv-placeholder {
-    min-height: 450px;
+    max-width: 420px;
   }
   .adv-text-half {
     padding: 120px 80px;
@@ -649,9 +654,15 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 .about-media img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95); transition: transform 600ms ease; }
 .about-media:hover img { transform: scale(1.03); }
 .about-content p { color: var(--text-secondary); font-family: var(--font-body); margin-bottom: 24px; font-size: 15.5px; line-height: 1.7; }
-.about-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
-.about-list li { display: flex; align-items: center; gap: 10px; font-family: var(--font-body); font-size: 15px; }
-.about-list li::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.about-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+.about-list li { display: flex; align-items: center; gap: 12px; font-family: var(--font-body); font-size: 15.5px; font-weight: 500; }
+.about-list li::before { 
+  content: '✓'; 
+  display: flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; border-radius: 50%; 
+  background: rgba(255,255,255,0.2); color: #fff; font-size: 13px; font-weight: bold;
+  flex-shrink: 0; 
+}
 .about-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
 .about-actions .btn-ghost svg { transition: transform var(--transition); }
 .about-actions .btn-ghost:hover svg { transform: translate(2px, -2px); }

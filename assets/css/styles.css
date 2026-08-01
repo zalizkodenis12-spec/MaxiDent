@@ -201,11 +201,11 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   color: var(--accent); display: block; font-size: 1.08em; line-height: 1.05;
 }
 .hero-sub {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(0.85rem, 1.4vw, 1rem);
-  color: #ffffff; max-width: 520px; margin-bottom: 32px; line-height: 1.8;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  font-weight: 500;
+  font-style: normal;
+  color: #ffffff; max-width: 520px; margin-bottom: 32px; line-height: 1.6;
 }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
 .hero-meta { display: flex; gap: 10px; flex-wrap: wrap; color: rgba(255,255,255,0.7); font-family: var(--font-body); font-size: 13px; }
@@ -749,15 +749,16 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 }
 .field input, .field textarea {
   width: 100%; padding: 13px 16px;
-  background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.15);
+  background: #ffffff; border: 1.5px solid var(--border);
   border-radius: 10px; color: var(--text-primary);
   font-family: var(--font-body); font-size: 15px;
-  transition: border-color var(--transition), background var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 .field textarea { resize: vertical; min-height: 90px; }
 .field input::placeholder, .field textarea::placeholder { color: var(--text-muted); }
 .field input:focus, .field textarea:focus {
-  outline: none; border-color: var(--accent); background: rgba(255,255,255,0.09);
+  outline: none; border-color: var(--accent); background: #ffffff;
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 .field input[aria-invalid="true"] { border-color: var(--error); }
 .field-error { display: block; min-height: 16px; color: var(--error); font-family: var(--font-body); font-size: 12px; margin-top: 5px; }

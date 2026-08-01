@@ -31,7 +31,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span>098 510 0655</span>
       </a>
-      <a href="#booking" class="btn btn-cta btn-sm">Записатись</a>
+      <a href="#contacts" class="btn btn-cta btn-sm">Записатись</a>
     </div>
     <button class="burger" id="burgerBtn" aria-label="Меню" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -47,7 +47,7 @@
   <a href="#reviews">Відгуки</a>
   <a href="#contacts">Контакти</a>
   <a href="tel:+380985100655" class="btn btn-outline">Зателефонувати</a>
-  <a href="#booking" class="btn btn-cta">Записатися</a>
+  <a href="#contacts" class="btn btn-cta">Записатися</a>
 </div>
 
 <main id="top">
@@ -66,7 +66,7 @@
         професійний підхід, комфорт та ідеальна усмішка для кожного пацієнта
       </p>
       <div class="hero-actions reveal">
-        <a href="#booking" class="btn btn-cta btn-lg">Записатися онлайн</a>
+        <a href="#contacts" class="btn btn-cta btn-lg">Записатися онлайн</a>
         <a href="tel:+380985100655" class="btn btn-outline btn-lg">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Зателефонувати
@@ -263,48 +263,6 @@
     </div>
   </section>
 
-  <!-- BOOKING -->
-  <section class="section booking-section" id="booking">
-    <div class="booking-bg">
-      <img src="assets/images/фон заяквка.jpg" alt="MaksiDent" loading="lazy">
-      <div class="booking-scrim"></div>
-    </div>
-    <div class="ghost-watermark" aria-hidden="true">MAKSIDENT</div>
-
-    <div class="container booking-inner reveal">
-      <h2 class="section-title center">Запишіться на прийом сьогодні</h2>
-      <p class="section-desc center">Залиште заявку — адміністратор зв'яжеться з вами найближчим часом.</p>
-
-      <form class="booking-form" id="bookingForm" novalidate>
-        <div class="field">
-            <label for="f-name">Ім'я*</label>
-            <input type="text" id="f-name" name="name" autocomplete="name" placeholder="Ваше ім'я" required>
-            <span class="field-error" role="alert"></span>
-          </div>
-          <div class="field">
-            <label for="f-phone">Телефон*</label>
-            <input type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="+380 XX XXX XX XX" required>
-            <span class="field-error" role="alert"></span>
-          </div>
-        <div class="field">
-          <label for="f-service">Послуга</label>
-          <input type="text" id="f-service" name="service" autocomplete="off" placeholder="Огляд, чистка, лікування...">
-        </div>
-        <div class="field">
-          <label for="f-comment">Побажання</label>
-          <textarea id="f-comment" name="comment" rows="3" placeholder="Будь-які побажання щодо прийому"></textarea>
-        </div>
-        <button type="submit" class="btn btn-cta btn-block" id="bookingSubmit">Записатися</button>
-        <p class="booking-status" id="bookingStatus" role="status" aria-live="polite"></p>
-      </form>
-
-      <p class="booking-secondary">
-        або зателефонуйте: <a href="tel:+380985100655">098 510 0655</a>
-        · <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram Максі Дент</a>
-      </p>
-    </div>
-  </section>
-
   <!-- MAP / CONTACTS -->
   <section class="section contacts-section" id="contacts">
     <div class="container contacts-grid">
@@ -315,26 +273,27 @@
           referrerpolicy="no-referrer-when-downgrade" title="Максі Дент на карті"></iframe>
       </div>
       <div class="contacts-info reveal">
-        <h3>Стоматологія Максі Дент</h3>
-        <dl>
-          <div class="info-row">
-            <dt>Адреса</dt>
-            <dd>вул. Степана Бандери, 70, Тернопіль</dd>
+        <h3 style="margin-bottom: 12px; font-size: 24px;">Запишіться на прийом</h3>
+        <p style="margin-bottom: 24px; color: var(--text-secondary); font-size: 15px;">Залиште заявку — ми зв'яжемося з вами найближчим часом.</p>
+        
+        <form class="booking-form" id="bookingForm" novalidate style="max-width: 100%; box-shadow: none; padding: 0; background: transparent;">
+          <div class="field">
+            <label for="f-name">Ім'я*</label>
+            <input type="text" id="f-name" name="name" autocomplete="name" placeholder="Ваше ім'я" required>
+            <span class="field-error" role="alert"></span>
           </div>
-          <div class="info-row">
-            <dt>Телефон</dt>
-            <dd><a href="tel:+380985100655">098 510 0655</a></dd>
+          <div class="field">
+            <label for="f-phone">Телефон*</label>
+            <input type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="+380 XX XXX XX XX" required>
+            <span class="field-error" role="alert"></span>
           </div>
-          <div class="info-row">
-            <dt>Instagram</dt>
-            <dd><a href="https://instagram.com" target="_blank" rel="noopener">@maksident</a></dd>
+          <div class="field">
+            <label for="f-comment">Побажання</label>
+            <textarea id="f-comment" name="comment" rows="3" placeholder="Будь-які побажання щодо прийому"></textarea>
           </div>
-          <div class="info-row">
-            <dt>Графік роботи</dt>
-            <dd>Пн–Нд: 09:00 – 20:00, без вихідних</dd>
-          </div>
-        </dl>
-        <a href="https://www.google.com/maps/search/вул.+Степана+Бандери+70,+Тернопіль" target="_blank" rel="noopener" class="btn btn-cta">Прокласти маршрут →</a>
+          <button type="submit" class="btn btn-cta btn-block" id="bookingSubmit" style="width: 100%;">Надіслати заявку</button>
+          <p class="booking-status" id="bookingStatus" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>

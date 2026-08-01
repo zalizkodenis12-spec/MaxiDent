@@ -113,6 +113,18 @@
   const form = document.getElementById('bookingForm');
   if (!form) return;
 
+  const serviceSelect = document.getElementById('f-service');
+  if (serviceSelect && window.Choices) {
+    new Choices(serviceSelect, {
+      removeItemButton: true,
+      searchEnabled: true,
+      searchPlaceholderValue: 'Пошук послуги...',
+      itemSelectText: '',
+      noResultsText: 'Не знайдено',
+      noChoicesText: 'Немає доступних варіантів'
+    });
+  }
+
   const submitBtn = form.querySelector('button[type="submit"]');
   const statusEl = document.getElementById('bookingStatus');
   const cfg = window.SITE_CONFIG || {};
@@ -136,15 +148,15 @@
 
     let firstInvalid = null;
 
-    if (!name) {
-      setFieldError(form.name, "Вкажіть, будь ласка, ваше ім'я");
+    if (!name || name.length < 2) {
+      setFieldError(form.name, "Ім'я повинно містити мінімум 2 символи");
       firstInvalid = firstInvalid || form.name;
     }
     if (!phone) {
       setFieldError(form.phone, 'Вкажіть номер телефону');
       firstInvalid = firstInvalid || form.phone;
-    } else if (!/^[+0-9][0-9\s()-]{6,}$/.test(phone)) {
-      setFieldError(form.phone, 'Перевірте формат номера');
+    } else if (phone.replace(/\D/g, '').length < 10) {
+      setFieldError(form.phone, 'Перевірте формат номера (мінімум 10 цифр)');
       firstInvalid = firstInvalid || form.phone;
     }
 
@@ -158,13 +170,21 @@
     statusEl.textContent = '';
     statusEl.className = 'booking-status';
 
-    const service = form.service ? form.service.value.trim() : '';
+    let serviceStr = '';
+    if (form.service) {
+      if (form.service.selectedOptions) {
+        serviceStr = Array.from(form.service.selectedOptions).map(opt => opt.value).filter(v => v).join(', ');
+      } else {
+        serviceStr = form.service.value.trim();
+      }
+    }
+    
     const text = [
       '🦷 Нова заявка з сайту MaksiDent',
       '',
       `Ім'я: ${name}`,
       `Телефон: ${phone}`,
-      `Послуга: ${service || '—'}`,
+      `Послуга: ${serviceStr || '—'}`,
       `Побажання: ${comment || '—'}`
     ].join('\n');
 

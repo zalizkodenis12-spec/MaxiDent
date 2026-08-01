@@ -203,7 +203,7 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 .hero-sub {
   font-family: var(--font-body);
   font-size: clamp(1rem, 1.4vw, 1.15rem);
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   color: #ffffff; max-width: 520px; margin-bottom: 32px; line-height: 1.6;
 }

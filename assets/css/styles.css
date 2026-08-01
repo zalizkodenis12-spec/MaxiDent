@@ -668,51 +668,46 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 .about-actions .btn-ghost:hover svg { transform: translate(2px, -2px); }
 
 /* ===== Reviews ===== */
-.reviews-section { background: #f8fafc; }
+.reviews-section { padding: 96px 0; background: var(--bg); }
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 40px 32px;
 }
 .review-card {
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 16px;
+  position: relative;
+  transition: transform var(--transition);
+  box-shadow: none;
+}
+.review-card::before { display: none; }
+.review-card:hover { transform: translateY(-4px); border: none; box-shadow: none; }
+.review-icon {
+  width: 64px; height: 64px; border-radius: 50%;
   background: #ffffff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  display: flex; flex-direction: column; gap: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
+  border: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+  margin-bottom: 4px;
+  transition: all var(--transition);
 }
-.review-card:hover { 
-  transform: translateY(-5px); 
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08); 
-}
-.review-header {
-  display: flex; align-items: center; gap: 16px;
-}
-.review-header img {
-  width: 60px; height: 60px;
-  border-radius: 50%; object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-.review-meta {
-  display: flex; flex-direction: column;
-}
-.review-meta strong {
-  font-size: 16px; color: #111; font-weight: 700;
-}
-.review-meta span {
-  font-size: 13px; color: var(--text-secondary);
+.review-card:hover .review-icon {
+  background: var(--accent);
+  color: #ffffff;
 }
 .review-stars { 
-  margin-left: auto; 
-  color: #f59e0b;
-  font-size: 16px; 
-  letter-spacing: 2px;
+  color: #f5c344; 
+  font-size: 17px; 
+  letter-spacing: 3px;
 }
 .review-text {
-  color: #555555; font-family: var(--font-body);
-  font-size: 14.5px; line-height: 1.6; font-style: italic;
+  color: var(--text-secondary); font-family: var(--font-body);
+  font-size: 14.5px; line-height: 1.7; font-style: italic;
+  max-width: 320px;
   margin: 0;
 }
 /* ===== Booking ===== */
@@ -954,9 +949,9 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
     max-width: 300px;
     scroll-snap-align: center;
   }
-  .review-header img { width: 50px; height: 50px; }
+  .review-icon { width: 56px; height: 56px; }
   .review-text { font-size: 14px; max-width: 100%; }
-  .review-stars { font-size: 14px; }
+  .review-stars { font-size: 16px; }
 
   /* Booking */
   .booking-section { padding: 72px 0; }

@@ -43,15 +43,23 @@
     revealTargets.forEach((el) => observer.observe(el));
   }
 
-  // ===== Work cards hover effect =====
-  document.querySelectorAll('.work-card').forEach((card) => {
-    card.addEventListener('mouseenter', () => {
-      card.querySelector('.work-card-overlay').style.opacity = '1';
+  // ===== Services Swiper =====
+  if (typeof Swiper !== 'undefined') {
+    new Swiper('.services-swiper', {
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+      grabCursor: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        640: { slidesPerView: 2.2, spaceBetween: 20 },
+        992: { slidesPerView: 3, spaceBetween: 24 },
+        1200: { slidesPerView: 4, spaceBetween: 24 },
+      }
     });
-    card.addEventListener('mouseleave', () => {
-      card.querySelector('.work-card-overlay').style.opacity = '0';
-    });
-  });
+  }
 
   // ===== Booking form -> Telegram =====
   const form = document.getElementById('bookingForm');

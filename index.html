@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&family=Cinzel:wght@700;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -135,6 +136,63 @@
       </div>
     </div>
   </section>
+
+  <!-- SERVICES CAROUSEL -->
+  <section class="section services-section" id="services" style="background: #ffffff;">
+    <div class="container">
+      <div class="section-head reveal" style="text-align:center; display:flex; flex-direction:column; align-items:center;">
+        <h2 class="section-title" style="color: var(--accent);">Послуги та Прайс</h2>
+        <p class="section-desc" style="color: #555555;">Оберіть категорію послуг для детальної інформації та цін</p>
+      </div>
+      
+      <div class="swiper services-swiper reveal">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="/services/terapiya" class="service-card">
+              <img src="assets/images/нова ава.png" alt="Терапія">
+              <div class="service-card-footer">
+                <h3>Терапія</h3>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="/services/hirurgiya" class="service-card">
+              <img src="assets/images/квадратік.jpg" alt="Хірургія">
+              <div class="service-card-footer">
+                <h3>Хірургія</h3>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="/services/estetika" class="service-card">
+              <img src="assets/images/стрижка 1.jpg" alt="Естетична стоматологія">
+              <div class="service-card-footer">
+                <h3>Естетична стоматологія</h3>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="/services/ortodontiya" class="service-card">
+              <img src="assets/images/стрижка 2.jpg" alt="Ортодонтія">
+              <div class="service-card-footer">
+                <h3>Ортодонтія</h3>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="/services/dytjacha" class="service-card">
+              <img src="assets/images/стрижка 3.jpg" alt="Дитяча стоматологія">
+              <div class="service-card-footer">
+                <h3>Дитяча стоматологія</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ADVANTAGES -->
   <section class="advantages-full-width" id="advantages">
     <!-- Секція 1 -->
@@ -196,46 +254,7 @@
     </div>
   </section>
 
-  <!-- OUR WORKS -->
-  <section class="section works-section" id="works">
-    <div class="container">
-      <div class="section-head reveal" style="text-align:center; display:flex; flex-direction:column; align-items:center;">
-        <h2 class="section-title">Наші Роботи</h2>
-        <p class="section-desc">Кожна здорова усмішка — це наша гордість. Дивись більше у <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>.</p>
-      </div>
 
-      <div class="works-grid">
-        <div class="work-card reveal">
-          <img src="assets/images/стрижка 1.jpg" alt="Реставрація зубів — робота лікаря" loading="lazy">
-          <div class="work-card-overlay">
-            <span class="work-card-label">Художня реставрація</span>
-            <span class="work-card-sub">Максі Дент</span>
-          </div>
-        </div>
-        <div class="work-card reveal">
-          <img src="assets/images/стрижка 2.jpg" alt="Відбілювання зубів" loading="lazy">
-          <div class="work-card-overlay">
-            <span class="work-card-label">Відбілювання зубів</span>
-            <span class="work-card-sub">Максі Дент</span>
-          </div>
-        </div>
-        <div class="work-card reveal">
-          <img src="assets/images/стрижка 3.jpg" alt="Встановлення вінірів" loading="lazy">
-          <div class="work-card-overlay">
-            <span class="work-card-label">Встановлення вінірів</span>
-            <span class="work-card-sub">Максі Дент</span>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="works-cta reveal">
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="btn btn-outline">
-          Більше робіт в Instagram →
-        </a>
-      </div>
-    </div>
-  </section>
 
 
   <!-- REVIEWS -->
@@ -386,6 +405,7 @@
   Зателефонувати
 </a>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

@@ -1,4 +1,11 @@
 (() => {
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  setTimeout(() => {
+    document.documentElement.style.scrollBehavior = 'smooth';
+  }, 100);
+
   const header = document.getElementById('siteHeader');
   const burger = document.getElementById('burgerBtn');
   const mobileNav = document.getElementById('mobileNav');
@@ -153,7 +160,7 @@
 
     const service = form.service ? form.service.value.trim() : '';
     const text = [
-      '💜 Нова заявка з сайту Салон краси «KARI»',
+      '🦷 Нова заявка з сайту MaksiDent',
       '',
       `Ім'я: ${name}`,
       `Телефон: ${phone}`,

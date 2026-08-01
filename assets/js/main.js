@@ -46,17 +46,29 @@
   // ===== Services Swiper =====
   if (typeof Swiper !== 'undefined') {
     new Swiper('.services-swiper', {
-      slidesPerView: 1.2,
-      spaceBetween: 16,
+      effect: 'coverflow',
       grabCursor: true,
+      centeredSlides: true,
+      loop: true,
+      coverflowEffect: {
+        rotate: 0,
+        stretch: -20,
+        depth: 150,
+        modifier: 1,
+        slideShadows: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
       },
       breakpoints: {
-        640: { slidesPerView: 2.2, spaceBetween: 20 },
-        992: { slidesPerView: 3, spaceBetween: 24 },
-        1200: { slidesPerView: 4, spaceBetween: 24 },
+        320: { slidesPerView: 1.5 },
+        768: { slidesPerView: 3 },
+        1200: { slidesPerView: 5 },
       }
     });
   }

@@ -43,33 +43,55 @@
     revealTargets.forEach((el) => observer.observe(el));
   }
 
-  // ===== Services Swiper =====
-  if (typeof Swiper !== 'undefined') {
-    new Swiper('.services-swiper', {
-      effect: 'coverflow',
-      grabCursor: true,
-      centeredSlides: true,
-      loop: true,
-      coverflowEffect: {
-        rotate: 0,
-        stretch: -20,
-        depth: 150,
-        modifier: 1,
-        slideShadows: false,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        320: { slidesPerView: 1.5 },
-        768: { slidesPerView: 3 },
-        1200: { slidesPerView: 5 },
-      }
+  // ===== Custom Fixed Slots Carousel =====
+  const track = document.getElementById('servicesCarouselTrack');
+  if (track) {
+    const categories = [
+      { slug: 'terapiya', title: 'Терапевтична стоматологія', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' },
+      { slug: 'endodontiya', title: 'Ендодонтичне лікування', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' },
+      { slug: 'ortopediya', title: 'Ортопедична стоматологія', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' },
+      { slug: 'ortodontiya', title: 'Ортодонтія', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' },
+      { slug: 'implantaciya', title: 'Імплантація', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' },
+      { slug: 'ortoped-etap', title: 'Ортопедичний етап', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' },
+      { slug: 'hirurgiya', title: 'Хірургічне лікування', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' }
+    ];
+    
+    let currentIndex = 0;
+    const slots = [
+      track.querySelector('.slot-left-2'),
+      track.querySelector('.slot-left-1'),
+      track.querySelector('.slot-center'),
+      track.querySelector('.slot-right-1'),
+      track.querySelector('.slot-right-2')
+    ];
+    
+    const renderSlots = () => {
+      slots.forEach(slot => slot.classList.add('fading'));
+      setTimeout(() => {
+        slots.forEach((slot, i) => {
+          const offset = i - 2;
+          let catIndex = (currentIndex + offset) % categories.length;
+          if (catIndex < 0) catIndex += categories.length;
+          
+          const cat = categories[catIndex];
+          slot.href = `/services/${cat.slug}`;
+          slot.querySelector('img').src = cat.img;
+          slot.querySelector('img').alt = cat.title;
+          slot.querySelector('h3').textContent = cat.title;
+          slot.classList.remove('fading');
+        });
+      }, 250);
+    };
+    
+    renderSlots();
+    
+    document.querySelector('.custom-carousel-wrapper .next-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % categories.length;
+      renderSlots();
+    });
+    document.querySelector('.custom-carousel-wrapper .prev-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + categories.length) % categories.length;
+      renderSlots();
     });
   }
 

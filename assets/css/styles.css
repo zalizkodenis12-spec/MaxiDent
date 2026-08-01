@@ -485,7 +485,9 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 
 /* Animations */
 .adv-anim-row .adv-img-half,
-.adv-anim-row .adv-text-inner > * {
+.adv-anim-row .adv-text-inner .adv-title,
+.adv-anim-row .adv-text-inner .adv-desc,
+.adv-anim-row .adv-text-inner .adv-list li {
   opacity: 0;
 }
 .adv-anim-row.is-visible .adv-img-half {
@@ -501,7 +503,9 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 .adv-anim-row.is-visible .adv-text-inner .adv-list li:nth-child(3) { animation: fadeSide 0.5s ease-out 0.60s forwards; }
 .adv-anim-row.is-visible .adv-text-inner .adv-list li:nth-child(4) { animation: fadeSide 0.5s ease-out 0.65s forwards; }
 
-.adv-row-reverse.adv-anim-row.is-visible .adv-text-inner > * {
+.adv-row-reverse.adv-anim-row.is-visible .adv-text-inner .adv-title,
+.adv-row-reverse.adv-anim-row.is-visible .adv-text-inner .adv-desc,
+.adv-row-reverse.adv-anim-row.is-visible .adv-text-inner .adv-list li {
   animation-name: fadeSideLeft;
 }
 

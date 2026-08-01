@@ -309,7 +309,7 @@ categories.forEach(cat => {
         ${servicesHtml}
       </div>
       <div style="margin-top: 60px; text-align: center;" class="reveal">
-        <a href="/#booking" class="btn btn-cta btn-lg" style="color: #ffffff; padding: 18px 40px; font-size: 16px;">Записатись на прийом</a>
+        <a href="/#contacts" class="btn btn-cta btn-lg" style="color: #ffffff; padding: 18px 40px; font-size: 16px;">Записатись на прийом</a>
       </div>
     </div>
   </section>

@@ -1069,3 +1069,26 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   line-height: 1.6;
   color: var(--text-secondary);
 }
+
+/* ===== USER FONT OVERRIDES ===== */
+.hero-sub {
+  font-style: italic !important;
+}
+.section-title, .adv-title {
+  font-family: var(--font-display) !important;
+}
+.trust-item span {
+  font-family: var(--font-serif) !important;
+  font-style: italic !important;
+  font-size: 15px !important;
+}
+.about-list li {
+  font-family: var(--font-serif) !important;
+  font-style: italic !important;
+  font-size: 17px !important;
+}
+.adv-list li {
+  font-family: var(--font-serif) !important;
+  font-style: italic !important;
+  font-size: 19px !important;
+}

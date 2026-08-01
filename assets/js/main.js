@@ -31,14 +31,21 @@
   if (reduceMotion || !('IntersectionObserver' in window)) {
     revealTargets.forEach((el) => el.classList.add('is-visible'));
   } else {
-    const observer = new IntersectionObserver((entries) => {
+      const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
+          entry.target.classList.remove('is-hidden-up', 'is-hidden-down');
+        } else {
+          entry.target.classList.remove('is-visible');
+          if (entry.boundingClientRect.top < window.innerHeight / 2) {
+            entry.target.classList.add('is-hidden-up');
+          } else {
+            entry.target.classList.add('is-hidden-down');
+          }
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px 0px 0px' });
 
     revealTargets.forEach((el) => observer.observe(el));
   }

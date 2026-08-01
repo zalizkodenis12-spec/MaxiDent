@@ -90,13 +90,7 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 .btn-sm { padding: 10px 20px; font-size: 12px; }
 .btn-block { width: 100%; margin-top: 8px; padding: 16px; font-size: 16px; }
 
-/* ===== Reveal ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 650ms cubic-bezier(0.16,1,0.3,1), transform 650ms cubic-bezier(0.16,1,0.3,1);
-}
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+/* Reveal animations moved to the bottom */
 
 /* ===== Header ===== */
 .site-header {
@@ -1102,8 +1096,14 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 /* ===== ADVANCED ANIMATIONS ===== */
 .reveal {
   opacity: 0;
-  transform: translateY(35px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.reveal.is-hidden-up {
+  transform: translateY(-40px);
+}
+.reveal.is-hidden-down, .reveal:not(.is-visible):not(.is-hidden-up) {
+  transform: translateY(40px);
 }
 .reveal.is-visible {
   opacity: 1;

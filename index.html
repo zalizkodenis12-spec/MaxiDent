@@ -272,26 +272,38 @@
           width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade" title="Максі Дент на карті"></iframe>
       </div>
-      <div class="contacts-info reveal">
-        <h3 style="margin-bottom: 12px; font-size: 24px;">Запишіться на прийом</h3>
-        <p style="margin-bottom: 24px; color: var(--text-secondary); font-size: 15px;">Залиште заявку — ми зв'яжемося з вами найближчим часом.</p>
+      <div class="contacts-info reveal" style="display: flex; flex-direction: column; justify-content: center; gap: 10px;">
+        <h3 style="margin-bottom: 0; font-size: 24px;">Запишіться на прийом</h3>
+        <p style="margin-bottom: 20px; color: var(--text-secondary); font-size: 15px;">Залиште заявку — ми зв'яжемося з вами найближчим часом.</p>
         
-        <form class="booking-form" id="bookingForm" novalidate style="max-width: 100%; box-shadow: none; padding: 0; background: transparent;">
-          <div class="field">
+        <form class="booking-form" id="bookingForm" novalidate style="margin: 0; max-width: 100%; width: 100%; box-shadow: none; padding: 0; background: transparent;">
+          <div class="field" style="margin-bottom: 20px;">
             <label for="f-name">Ім'я*</label>
-            <input type="text" id="f-name" name="name" autocomplete="name" placeholder="Ваше ім'я" required>
+            <input type="text" id="f-name" name="name" autocomplete="name" placeholder="Ваше ім'я" required style="padding: 16px;">
             <span class="field-error" role="alert"></span>
           </div>
-          <div class="field">
+          <div class="field" style="margin-bottom: 20px;">
             <label for="f-phone">Телефон*</label>
-            <input type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="+380 XX XXX XX XX" required>
+            <input type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="+380 XX XXX XX XX" required style="padding: 16px;">
             <span class="field-error" role="alert"></span>
           </div>
-          <div class="field">
-            <label for="f-comment">Побажання</label>
-            <textarea id="f-comment" name="comment" rows="3" placeholder="Будь-які побажання щодо прийому"></textarea>
+          <div class="field" style="margin-bottom: 20px;">
+            <label for="f-service">Послуга</label>
+            <select id="f-service" name="service" style="width: 100%; padding: 16px; background: #ffffff; border: 1.5px solid var(--border); border-radius: 10px; color: var(--text-primary); font-family: var(--font-body); font-size: 15px; appearance: none; cursor: pointer;">
+              <option value="" disabled selected>Оберіть послугу...</option>
+              <option value="Консультація та огляд">Консультація та огляд</option>
+              <option value="Лікування карієсу">Лікування карієсу</option>
+              <option value="Чистка та відбілювання">Чистка та відбілювання</option>
+              <option value="Імплантація">Імплантація</option>
+              <option value="Інше">Інше</option>
+            </select>
+            <span class="field-error" role="alert"></span>
           </div>
-          <button type="submit" class="btn btn-cta btn-block" id="bookingSubmit" style="width: 100%;">Надіслати заявку</button>
+          <div class="field" style="margin-bottom: 24px;">
+            <label for="f-comment">Побажання</label>
+            <textarea id="f-comment" name="comment" rows="2" placeholder="Будь-які побажання щодо прийому" style="padding: 16px;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-cta btn-block" id="bookingSubmit" style="width: 100%; padding: 18px; font-size: 16px;">Надіслати заявку</button>
           <p class="booking-status" id="bookingStatus" role="status" aria-live="polite"></p>
         </form>
       </div>

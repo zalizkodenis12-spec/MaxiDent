@@ -47,13 +47,13 @@
   const track = document.getElementById('servicesCarouselTrack');
   if (track) {
     const categories = [
-      { slug: 'terapiya', title: 'Терапевтична стоматологія', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' },
-      { slug: 'endodontiya', title: 'Ендодонтичне лікування', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' },
-      { slug: 'ortopediya', title: 'Ортопедична стоматологія', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' },
-      { slug: 'ortodontiya', title: 'Ортодонтія', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' },
-      { slug: 'implantaciya', title: 'Імплантація', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' },
-      { slug: 'ortoped-etap', title: 'Ортопедичний етап', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' },
-      { slug: 'hirurgiya', title: 'Хірургічне лікування', img: 'https://placehold.co/400x500/eaeaea/555555?text=IMG' }
+      { slug: 'terapiya', title: 'Терапевтична стоматологія', img: 'assets/images/терапевтична стоматологія.png' },
+      { slug: 'endodontiya', title: 'Ендодонтичне лікування', img: 'assets/images/ендодонтичне лікування.png' },
+      { slug: 'ortopediya', title: 'Ортопедична стоматологія', img: 'assets/images/ортопедичне лікування.png' },
+      { slug: 'ortodontiya', title: 'Ортодонтія', img: 'assets/images/ортодонтія.png' },
+      { slug: 'implantaciya', title: 'Імплантація', img: 'assets/images/імплантація.png' },
+      { slug: 'ortoped-etap', title: 'Ортопедичний етап', img: 'assets/images/ортопедичний етап.png' },
+      { slug: 'hirurgiya', title: 'Хірургічне лікування', img: 'assets/images/хірургічне лікування.png' }
     ];
     
     let currentIndex = 0;

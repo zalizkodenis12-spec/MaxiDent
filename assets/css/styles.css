@@ -1071,11 +1071,7 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
 }
 
 /* ===== USER FONT OVERRIDES ===== */
-.section-title, .adv-title {
-  font-family: 'Playfair Display', serif !important;
-  font-style: italic !important;
-  font-weight: 700 !important;
-}
+
 .hero-sub {
   font-family: var(--font-body) !important;
   font-style: normal !important;

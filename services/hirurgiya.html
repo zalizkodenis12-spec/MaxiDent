@@ -31,7 +31,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span>098 510 0655</span>
       </a>
-      <a href="#booking" class="btn btn-cta btn-sm">Записатись</a>
+      <a href="#contacts" class="btn btn-cta btn-sm">Записатись</a>
     </div>
     <button class="burger" id="burgerBtn" aria-label="Меню" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -47,49 +47,398 @@
   <a href="#reviews">Відгуки</a>
   <a href="#contacts">Контакти</a>
   <a href="tel:+380985100655" class="btn btn-outline">Зателефонувати</a>
-  <a href="#booking" class="btn btn-cta">Записатися</a>
+  <a href="#contacts" class="btn btn-cta">Записатися</a>
 </div>
 
 <main id="top">
 
   
-  <section class="hero" style="min-height: 40vh; padding-top: 120px;">
-    <div class="hero-bg">
-      <img src="https://placehold.co/1920x600/eaeaea/555555?text=BANNER" alt="Хірургічне лікування">
-      <div class="hero-scrim"></div>
+  <style>
+    .category-hero {
+      position: relative;
+      min-height: 45vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+    .category-hero-bg {
+      position: absolute; inset: 0; z-index: -1;
+    }
+    .category-hero-bg img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .category-hero-scrim {
+      position: absolute; inset: 0;
+      background: rgba(14, 11, 20, 0.65);
+    }
+    .category-hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+    .category-hero-title {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .category-hero-desc {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .services-wrapper {
+      background: #f9fbfd;
+      padding: 80px 0;
+    }
+    .services-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .service-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .service-row:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 12px 30px rgba(14, 165, 233, 0.08);
+      border-color: rgba(14, 165, 233, 0.3);
+    }
+    .service-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .service-icon {
+      width: 24px; height: 24px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .service-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+    }
+    .service-price {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--accent);
+      white-space: nowrap;
+      margin-left: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .service-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 20px;
+      }
+      .service-price {
+        margin-left: 40px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+  <section class="category-hero">
+    <div class="category-hero-bg">
+      <img src="../assets/images/хірургічне лікування.png" alt="Хірургічне лікування" onerror="this.src='../assets/images/фонове на місці заявки.jpg'">
+      <div class="category-hero-scrim"></div>
     </div>
-    <div class="container hero-inner">
-      <a href="/#services" class="btn btn-ghost" style="color:var(--accent); margin-bottom: 20px;">← Назад до послуг</a>
-      <h1 class="hero-title reveal">Хірургічне лікування</h1>
-      <p class="hero-sub reveal" style="max-width: 800px; text-transform:none;">Атравматичне видалення зубів будь-якої складності та інші хірургічні втручання.</p>
+    <div class="category-hero-content">
+      <a href="/#services" class="btn btn-outline" style="margin-bottom: 30px; border-color: rgba(255,255,255,0.3); color: #fff; background: rgba(0,0,0,0.3); backdrop-filter: blur(10px);">← Назад до послуг</a>
+      <h1 class="category-hero-title reveal">Хірургічне лікування</h1>
+      <p class="category-hero-desc reveal" style="transition-delay: 0.1s;">Атравматичне видалення зубів будь-якої складності та інші хірургічні втручання.</p>
     </div>
   </section>
-  <section class="section" style="background:#fff;">
+
+  <section class="services-wrapper">
     <div class="container">
-      <h2 class="section-title" style="color:var(--accent);">Список послуг</h2>
-      <p style="color:#555; max-width:800px; margin-bottom: 40px;">Детальний перелік процедур та цін для даної категорії.</p>
-      
-      <div class="works-grid" style="display:flex; flex-direction:column; gap: 16px;">
-        <div style="padding: 20px; border: 1px solid var(--border); border-radius: 12px; display:flex; justify-content:space-between; align-items:center;">
-          <div><strong style="color:#222">Первинна консультація</strong><br><span style="color:#666;">30 хв</span></div>
-          <div style="font-weight:bold; color:var(--accent);">500 грн</div>
-        </div>
-        <div style="padding: 20px; border: 1px solid var(--border); border-radius: 12px; display:flex; justify-content:space-between; align-items:center;">
-          <div><strong style="color:#222">Основна процедура лікування</strong><br><span style="color:#666;">60 хв</span></div>
-          <div style="font-weight:bold; color:var(--accent);">від 1500 грн</div>
-        </div>
+      <div class="services-list">
+        
+    <div class="service-row reveal" style="transition-delay: 0s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Видалення молочного зуба</span>
       </div>
-      
-      <div style="margin-top: 40px; text-align:center;">
-        <a href="/#booking" class="btn btn-cta btn-lg" style="color: #000;">Записатись на прийом</a>
+      <div class="service-price">700 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.05s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Видалення однокореневого зуба</span>
+      </div>
+      <div class="service-price">від 1500 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.1s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Видалення багатокореневого зуба</span>
+      </div>
+      <div class="service-price">від 1800 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.15000000000000002s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Видалення зуба мудрості (прорізаний)</span>
+      </div>
+      <div class="service-price">від 2000 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.2s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Видалення зуба мудрості (напівпрорізаний)</span>
+      </div>
+      <div class="service-price">від 2500 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.25s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Видалення зуба мудрості (непрорізаний)</span>
+      </div>
+      <div class="service-price">від 3000 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.30000000000000004s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Атипове видалення зуба мудрості</span>
+      </div>
+      <div class="service-price">від 4000 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.35000000000000003s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Відкритий кюретаж (1 зуб)</span>
+      </div>
+      <div class="service-price">400 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.4s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Закритий кюретаж (1 зуб)</span>
+      </div>
+      <div class="service-price">300 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.45s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Кюретаж лунки</span>
+      </div>
+      <div class="service-price">від 200 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Резекція різця</span>
+      </div>
+      <div class="service-price">10000 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.05s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Резекція премоляра</span>
+      </div>
+      <div class="service-price">12000 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.1s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Резекція моляра</span>
+      </div>
+      <div class="service-price">14000 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.15000000000000002s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Корекція вуздечки</span>
+      </div>
+      <div class="service-price">2000 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.2s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Лікування альвеоліту за допомогою PRF</span>
+      </div>
+      <div class="service-price">1000 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.25s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Коагуляція м'яких тканин</span>
+      </div>
+      <div class="service-price">300 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.30000000000000004s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Клінічне видовження коронки зуба</span>
+      </div>
+      <div class="service-price">1000 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.35000000000000003s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Хірургічне лікування перикоронариту зуба</span>
+      </div>
+      <div class="service-price">700 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.4s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Використання PRF мембрани</span>
+      </div>
+      <div class="service-price">800 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.45s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Накладання гемостатичної, колагенової губки</span>
+      </div>
+      <div class="service-price">300 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Накладання колагенового конуса Collacone</span>
+      </div>
+      <div class="service-price">800 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.05s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Ушиття лунки</span>
+      </div>
+      <div class="service-price">300 грн</div>
+    </div>
+  
+    <div class="service-row reveal" style="transition-delay: 0.1s;">
+      <div class="service-info">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="service-name">Послаблюючий розріз</span>
+      </div>
+      <div class="service-price">200 грн</div>
+    </div>
+  
+      </div>
+      <div style="margin-top: 60px; text-align: center;" class="reveal">
+        <a href="/#booking" class="btn btn-cta btn-lg" style="color: #ffffff; padding: 18px 40px; font-size: 16px;">Записатись на прийом</a>
       </div>
     </div>
   </section>
   <footer class="site-footer">
   <div class="container footer-inner">
     <a href="#top" class="logo">
-      <span class="logo-avatar"><img src="../assets/images/ава.png" alt="MaksiDent"></span>
-      <span class="logo-text"><strong>Максі Дент</strong></span>
+      <img src="../assets/images/лого.png" alt="MaksiDent" style="height: 48px; width: auto; max-width: 100%;">
     </a>
     <nav class="footer-nav">
       <a href="#services">Послуги</a>
@@ -121,5 +470,29 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="../assets/js/config.js"></script>
 <script src="../assets/js/main.js"></script>
+
+<script>
+  // FAQ Accordion
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-question');
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const isExpanded = item.getAttribute('aria-expanded') === 'true';
+        // Close all others
+        faqItems.forEach(otherItem => {
+          otherItem.setAttribute('aria-expanded', 'false');
+          otherItem.nextElementSibling.style.maxHeight = null;
+        });
+        // Toggle current
+        if (!isExpanded) {
+          item.setAttribute('aria-expanded', 'true');
+          const answer = item.nextElementSibling;
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+  });
+</script>
 </body>
+
 </html>

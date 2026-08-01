@@ -269,6 +269,67 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section faq-section" id="faq" style="background: #ffffff;">
+    <div class="container faq-container reveal" style="max-width: 900px; margin: 0 auto;">
+      <div class="section-head" style="text-align: center;">
+        <h2 class="section-title">Часті питання</h2>
+      </div>
+      <div class="faq-list">
+        <!-- Item 1 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Чи болісне лікування?</span>
+            <div class="faq-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Ми використовуємо сучасні та безпечні методи анестезії, які повністю блокують больові відчуття. Лікування проходить максимально комфортно і без стресу.</div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Скільки коштує прийом?</span>
+            <div class="faq-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Вартість залежить від виду послуги. Консультація коштує 300 грн. З детальним прайсом на лікування ви можете ознайомитись у розділі <a href="#services" style="color:var(--accent); text-decoration:underline;">Послуги та Прайс</a>.</div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Чи можлива розстрочка або оплата частинами?</span>
+            <div class="faq-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Деталі щодо розстрочки та оплати частинами, будь ласка, уточнюйте у нашого адміністратора під час запису на прийом або за телефоном.</div>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Скільки триває лікування одного зуба?</span>
+            <div class="faq-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">В середньому лікування неускладненого карієсу займає від 40 до 60 хвилин. Складніші процедури (ендодонтія, імплантація) можуть тривати довше — лікар повідомить точний час після діагностики.</div>
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Чи приймаєте у терміновому порядку / без запису?</span>
+            <div class="faq-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Ми працюємо за попереднім записом, але у випадку гострого болю завжди намагаємося знайти віконце для термінового прийому. Обов'язково зателефонуйте нам перед візитом.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- MAP / CONTACTS -->
   <section class="section contacts-section" id="contacts">
     <div class="container contacts-grid">
@@ -461,5 +522,29 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/main.js"></script>
+
+<script>
+  // FAQ Accordion
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-question');
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const isExpanded = item.getAttribute('aria-expanded') === 'true';
+        // Close all others
+        faqItems.forEach(otherItem => {
+          otherItem.setAttribute('aria-expanded', 'false');
+          otherItem.nextElementSibling.style.maxHeight = null;
+        });
+        // Toggle current
+        if (!isExpanded) {
+          item.setAttribute('aria-expanded', 'true');
+          const answer = item.nextElementSibling;
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+  });
+</script>
 </body>
+
 </html>
